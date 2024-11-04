@@ -1,7 +1,7 @@
 package com.example.taskmanager.services.person;
 
 import com.example.taskmanager.model.Person;
-import com.example.taskmanager.transfert.submissions.PersonSubmission;
+import com.example.taskmanager.transfert.submissions.CreatePersonSubmission;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,8 +15,8 @@ public class PersonService {
         this.personRepository = personRepository;
     }
 
-    public Person createPerson(PersonSubmission personSubmission) {
-        return personRepository.save(new Person(personSubmission.name(), personSubmission.email()));
+    public Person createPerson(CreatePersonSubmission createPersonSubmission) {
+        return personRepository.save(new Person(createPersonSubmission.name(), createPersonSubmission.email()));
     }
 
     public List<Person> getAllPersons() {

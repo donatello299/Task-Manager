@@ -2,8 +2,7 @@ package com.example.taskmanager.resources;
 
 import com.example.taskmanager.model.Person;
 import com.example.taskmanager.services.person.PersonService;
-import com.example.taskmanager.transfert.submissions.PersonSubmission;
-import lombok.Getter;
+import com.example.taskmanager.transfert.submissions.CreatePersonSubmission;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,8 +18,8 @@ public class PersonResource {
     }
 
     @PostMapping
-    public Person createPerson(@RequestBody PersonSubmission personSubmission) {
-        return personService.createPerson(personSubmission);
+    public Person createPerson(@RequestBody CreatePersonSubmission createPersonSubmission) {
+        return personService.createPerson(createPersonSubmission);
     }
 
     @GetMapping("/all")
